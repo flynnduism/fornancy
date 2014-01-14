@@ -6,6 +6,9 @@ $green: #8BB6A3;
 $lblue: #17A7A8;
 $dblue: #122F51;
 
+$garamond: "EB Garamond", "lucida bright", georgia, times, serif;
+$abril: "Abril Fatface", "lucida bright", georgia, times, serif;
+
 html {
     position: relative;
     height: 100%;
@@ -13,7 +16,7 @@ html {
 
 body {
     background-color: $cream;
-    font-family: 'EB Garamond', serif;
+    font-family: $garamond;
     font-weight: 300;
     font-size: 16px;
     color: #555;
@@ -28,7 +31,7 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Abril Fatface', sans-serif;
+    font-family: $abril;
     font-weight: 300;
     color: #333;
 }
@@ -38,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     line-height: 28px;
     margin-bottom: 25px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .centered {
@@ -82,6 +85,28 @@ a:after {
     padding: 0;
 }
 
+nav {
+    position: absolute;
+    top: 3.5em;
+    text-align: center;
+    font-size: 1.25em;
+    font-family: $garamond;
+    width: 38em;
+    left: 50%;
+    margin: 0 0 0 -19em;
+
+    a {
+        display: inline-block;
+        padding: 0.5em;
+        margin: 0 1em;
+        color: $cherry;
+
+        &:hover {
+            color: $dblue;
+        }
+    }
+}
+
 
 /* Homepage */
 
@@ -111,13 +136,47 @@ a:after {
     }
 }
 
+.nav-area {
+    height: 260px;
+    background: rgba(255, 255, 255, 0.5);
+
+    nav {
+        margin-top: -1.75em;
+    }
+
+    h1 {
+        margin-top: 3.25em;
+        font-size: 2.667em;
+        color: $cherry;
+        position: relative;
+
+        em {
+            color: $lblue;
+            font-family: $garamond;
+            margin: 0 0.2em 0 0;
+            font-size: 0.4em;
+            position: absolute;
+            top: -0.667em;
+            left: 40%;
+
+        }
+
+        a {
+            color: $cherry;
+
+            &:hover {
+                color: $dblue;
+            }
+        }
+    }
+}
+
 .whitebg {
     background: white;
     width: 100%;
     padding-top: 2em;
-    padding-bottom: 3em;
+    padding-bottom: 5em;
     z-index: 500;
-    //box-shadow: 0 0 10px 30px 1;
 
     h2 {
         color: $cherry;
@@ -132,6 +191,58 @@ a:after {
     small {
         color: #999;
     }
+
+    p {
+        line-height: 1.636;
+        margin: 0;
+        padding: 1em 2.5% 1em 0;
+        color: #555;
+        font-size: 18px;
+    }
+
+    form {
+        margin: 2em 0 0;
+
+        label {
+            color: #999;
+            padding: 0.75em 0 0;
+        }
+        input,
+        textarea {
+            display: block;
+            margin: 0.5em 0 1em;
+            background: lighten($cream, 7.5%);
+            border: none;
+            box-shadow: 0 1px 1px 0 lighten($lblue, 50%) inset;
+            color: #777;
+            font-size: 1em;
+            padding: 0.5em 0.333em;
+        }
+
+        input {
+            width: 50%;
+        }
+        textarea {
+            width: 66.67%;
+        }
+
+        .btn-row {
+            input {
+                display: inline-block;
+                margin: 1.25em 0.5em 0 0;
+                color: white;
+                background: $green;
+                font-size: 1.12em;
+                width: auto;
+                padding: 0.425em 0.825em;
+
+                &:last-child {
+                    background: transparent none;
+                    color: $cherry;
+                }
+            }
+        }
+    }
 }
 
 .footer {
@@ -141,6 +252,19 @@ a:after {
         padding: 1.25em 0;
         margin: 0;
         font-size: 1em;
-
     }
+}
+
+a {
+    transition: all 0.4s ease;
+}
+
+
+// Galleria
+.galleria-stage {
+    background: #eaeaea !important;
+    width: 92% !important;
+    height: 100%;
+    min-height: 600px;
+    margin: 2em auto;
 }
