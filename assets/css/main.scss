@@ -26,7 +26,13 @@ body {
 }
 
 .page-wrap {
-    min-height: 92%;
+    min-height: 100%;
+
+    header {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
 }
 
 /* Titles */
@@ -85,67 +91,84 @@ a:after {
     padding: 0;
 }
 
+header {
+  background-color: rgba(255,255,255,0.67);
+}
+
 nav {
-    position: absolute;
-    top: 3.5em;
-    text-align: center;
-    font-size: 1.25em;
-    font-family: $garamond;
-    width: 38em;
-    left: 50%;
-    margin: 0 0 0 -19em;
+  margin: 1.25em 0 0;
+  height: 3.75em;
+  text-align: center;
+  font-size: 1.25em;
+  font-family: $garamond;
 
-    a {
-        display: inline-block;
-        padding: 0.5em;
-        margin: 0 1em;
-        color: $cherry;
+  a {
+    display: inline-block;
+    padding: 0.5em 0.75em;
+    margin: 0 0.5em;
+    color: $dblue;
+    background-color: transparent;
+    border-radius: 2em;
+    opacity: 0.75;
 
-        &:hover {
-            color: $dblue;
-        }
+    &:hover {
+      background-color: white;
+      opacity: 1;
     }
+  }
 }
 
 
 /* Homepage */
 
 .hero-area {
-    min-height: 580px;
+  position: relative;
 
-    h1 {
-        font-size: 70px;
-        position: relative;
-        padding: 0;
-        margin: 62.5% 0 0;
-        color: $cherry;
-        text-shadow: 0 2px 10px rgba(255,255,255,0.3);
+  img.circled {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.5);
+    max-width: 100%;
+    z-index: 100;
+    position: relative;
+    margin-top: 3em;
+  }
 
-        small {
-            position: absolute;
-            width: 100%;
-            top: -0.5em;
-            left: 50%;
-            margin: 0 0 0 -55%;
-            letter-spacing: 0.02em;
-            font-family: 'EB Garamond', serif;
-            font-size: 0.333em;
-            font-style: italic;
-            color: #555;
-        }
+  h1 {
+    font-size: 70px;
+    position: relative;
+    padding: 0;
+    margin-top: 0.5em;
+    color: $cherry;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.3);
+    z-index: 200;
+
+    small {
+      position: absolute;
+      width: 100%;
+      top: -0.5em;
+      left: 50%;
+      margin: 0 0 0 -55%;
+      letter-spacing: 0.02em;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.333em;
+      font-style: italic;
+      color: #555;
     }
+  }
+}
+
+.nav-wrap {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .nav-area {
-    height: 260px;
-    background: rgba(255, 255, 255, 0.5);
-
-    nav {
-        margin-top: -1.75em;
-    }
+    height: 180px;
+    background: rgba(255, 255, 255, 0.25);
 
     h1 {
-        margin-top: 3.25em;
+        margin-top: 1.667em;
         font-size: 2.667em;
         color: $cherry;
         position: relative;
@@ -171,6 +194,10 @@ nav {
     }
 }
 
+.minheight {
+  min-height: 450px;
+}
+
 .whitebg {
     background: white;
     width: 100%;
@@ -179,13 +206,13 @@ nav {
     z-index: 500;
 
     h2 {
-        color: $cherry;
+        color: $dblue;
         font-family: 'EB Garamond', serif;
         font-weight: 800;
         font-size: 1.467em;
         text-transform: uppercase;
         letter-spacing: 0.06em;
-        margin: 0.75em 0 0.25em;
+        margin: 0.75em 0 1.5em;
     }
 
     small {
@@ -261,10 +288,33 @@ a {
 
 
 // Galleria
+.galleria-container {
+  background-color: #eee !important;
+}
+
 .galleria-stage {
     background: #eaeaea !important;
     width: 92% !important;
     height: 100%;
     min-height: 600px;
     margin: 2em auto;
+}
+
+.galleria-bar {
+  background-color: rgba(100,100,100,0.5) !important;
+
+  .galleria-thumbnails .galleria-image {
+    border-color: transparent !important;
+  }
+}
+
+.galleria-fullscreen, .galleria-play {
+  border-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+  outline: none;
+}
+
+.fotorama__wrap {
+  margin: 1em auto;
 }

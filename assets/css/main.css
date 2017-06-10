@@ -13,7 +13,11 @@ body {
   -webkit-overflow-scrolling: touch; }
 
 .page-wrap {
-  min-height: 92%; }
+  min-height: 100%; }
+  .page-wrap header {
+    position: absolute;
+    width: 100%;
+    bottom: 0; }
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
@@ -62,33 +66,47 @@ hr {
   margin: 1em 0;
   padding: 0; }
 
+header {
+  background-color: rgba(255, 255, 255, 0.67); }
+
 nav {
-  position: absolute;
-  top: 3.5em;
+  margin: 1.25em 0 0;
+  height: 3.75em;
   text-align: center;
   font-size: 1.25em;
-  font-family: "EB Garamond", "lucida bright", georgia, times, serif;
-  width: 38em;
-  left: 50%;
-  margin: 0 0 0 -19em; }
+  font-family: "EB Garamond", "lucida bright", georgia, times, serif; }
   nav a {
     display: inline-block;
-    padding: 0.5em;
-    margin: 0 1em;
-    color: #c7374e; }
+    padding: 0.5em 0.75em;
+    margin: 0 0.5em;
+    color: #122f51;
+    background-color: transparent;
+    border-radius: 2em;
+    opacity: 0.75; }
     nav a:hover {
-      color: #122f51; }
+      background-color: white;
+      opacity: 1; }
 
 /* Homepage */
 .hero-area {
-  min-height: 580px; }
+  position: relative; }
+  .hero-area img.circled {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+    max-width: 100%;
+    z-index: 100;
+    position: relative;
+    margin-top: 3em; }
   .hero-area h1 {
     font-size: 70px;
     position: relative;
     padding: 0;
-    margin: 62.5% 0 0;
+    margin-top: 0.5em;
     color: #c7374e;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3); }
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+    z-index: 200; }
     .hero-area h1 small {
       position: absolute;
       width: 100%;
@@ -101,13 +119,14 @@ nav {
       font-style: italic;
       color: #555; }
 
-.nav-area {
-  height: 260px;
+.nav-wrap {
   background: rgba(255, 255, 255, 0.5); }
-  .nav-area nav {
-    margin-top: -1.75em; }
+
+.nav-area {
+  height: 180px;
+  background: rgba(255, 255, 255, 0.25); }
   .nav-area h1 {
-    margin-top: 3.25em;
+    margin-top: 1.667em;
     font-size: 2.667em;
     color: #c7374e;
     position: relative; }
@@ -124,6 +143,9 @@ nav {
       .nav-area h1 a:hover {
         color: #122f51; }
 
+.minheight {
+  min-height: 450px; }
+
 .whitebg {
   background: white;
   width: 100%;
@@ -131,13 +153,13 @@ nav {
   padding-bottom: 5em;
   z-index: 500; }
   .whitebg h2 {
-    color: #c7374e;
+    color: #122f51;
     font-family: 'EB Garamond', serif;
     font-weight: 800;
     font-size: 1.467em;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    margin: 0.75em 0 0.25em; }
+    margin: 0.75em 0 1.5em; }
   .whitebg small {
     color: #999; }
   .whitebg p {
@@ -187,9 +209,26 @@ nav {
 a {
   transition: all 0.4s ease; }
 
+.galleria-container {
+  background-color: #eee !important; }
+
 .galleria-stage {
   background: #eaeaea !important;
   width: 92% !important;
   height: 100%;
   min-height: 600px;
   margin: 2em auto; }
+
+.galleria-bar {
+  background-color: rgba(100, 100, 100, 0.5) !important; }
+  .galleria-bar .galleria-thumbnails .galleria-image {
+    border-color: transparent !important; }
+
+.galleria-fullscreen, .galleria-play {
+  border-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+  outline: none; }
+
+.fotorama__wrap {
+  margin: 1em auto; }
